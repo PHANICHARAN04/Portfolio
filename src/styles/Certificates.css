@@ -1,0 +1,80 @@
+/* Certificates.css */
+
+.certificates-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
+.certificate {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s;
+  padding: 20px;
+  width: calc(35% - 100px); /* Adjust the width */
+}
+
+.certificate:hover {
+  transform: translateY(-5px);
+}
+
+.certificate-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.certificate-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.certificate-details {
+  font-size: 0.9em;
+  color: #666;
+  text-align: left;
+}
+
+.certificate-detail {
+  margin: 5px 0; /* Adjust the margin to control spacing between details */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Adjusted to center buttons */
+  margin-top: 10px; /* Added margin to separate buttons from details */
+}
+
+.validation-link,
+.credly-link {
+  text-align: center;
+  display: block;
+}
+
+.validation-button,
+.credly-button {
+  background-color: #ffc800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px; /* Adjusted padding for more space around text */
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  margin: 0 20px; /* Adjusted margin between buttons */
+}
+
+.validation-button:hover,
+.credly-button:hover {
+  background-color: #ffb700;
+}
+

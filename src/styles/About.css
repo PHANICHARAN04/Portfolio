@@ -1,0 +1,20 @@
+.about {
+    padding-top: 1px;
+  } 
+  
+
+.dp {
+    text-align: center;
+  }
+  
+  .dp img {
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+  }
+  
+  .highlighted-image {
+    background-color: #ffc800; /* Change to the desired background color */
+    padding: 20px; /* Adjust as needed */
+    border-radius: 20px; /* Add rounded corners */
+    margin-top: 70px; /* Add margin-top to move it down */
+  }

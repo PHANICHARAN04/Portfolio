@@ -1,0 +1,57 @@
+.skills-section {
+  padding: 130px;
+}
+
+.side-heading {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffc200;
+  margin-bottom: 10px;
+  border-left: 5px solid greenyellow; /* Add a green left border */
+  padding-left: 10px; /* Add padding to create space between the border and text */
+}
+
+.side-heading2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  padding-left: 15px; /* Add padding to create space between the border and text */
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.skill-box {
+  flex: 0 1 calc(15% - 30px); /* Decrease the flex-basis to make the boxes smaller */
+  box-sizing: border-box;
+  margin-bottom: 1px;
+  background-color: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s;
+  padding: 1px; /* Decrease padding to make the box dimensions smaller */
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  font-size: 70px; /* Adjust the icon size here if needed */
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+}
