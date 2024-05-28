@@ -1,27 +1,28 @@
-/* Certificates.css */
-
 .certificates-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   gap: 20px;
   padding: 20px;
 }
 
 .certificate {
-  background: none;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 20px;
-  width: calc(35% - 100px); /* Adjust the width */
+  width: calc(35% - 40px); /* Adjust the width */
+  position: relative;
+  cursor: pointer;
 }
 
 .certificate:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) rotate(-2deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .certificate-image {
@@ -29,19 +30,26 @@
   height: auto;
   border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.certificate:hover .certificate-image {
+  transform: rotate(2deg);
 }
 
 .certificate-title {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .certificate-details {
   font-size: 0.9em;
   color: #666;
   text-align: left;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .certificate-detail {
@@ -69,12 +77,24 @@
   padding: 10px 20px; /* Adjusted padding for more space around text */
   cursor: pointer;
   font-size: 0.9em;
-  transition: background-color 0.3s ease;
-  margin: 0 20px; /* Adjusted margin between buttons */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 0 10px; /* Adjusted margin between buttons */
 }
 
 .validation-button:hover,
 .credly-button:hover {
   background-color: #ffb700;
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotateIn {
+  0% { opacity: 0; transform: rotate(-10deg); }
+  100% { opacity: 1; transform: rotate(0deg); }
 }
 
