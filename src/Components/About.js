@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { useState } from 'react';
-import {Modal} from 'antd';
+import { Modal, Button } from 'antd';
 import '../styles/unicons.css';
 import '../styles/tooplate-style.css';
-import '../files/myresume.pdf';
+import resume from '../files/VENKATA PHANI CHARAN REDDY UDUMULA.pdf';
 import dp from '../images/dark.png';
 import '../styles/About.css';
 
@@ -44,19 +44,27 @@ function About() {
                   <a onClick={showModal} className="btn mr-lg-2 custom-btn">
                     <i className="uil uil-file-alt"></i> Open Resume
                   </a>
-              <Modal
-              title="Modal"
-              open={open}
-              onOk={hideModal}
-              onCancel={hideModal}
-             centered={true}
-              cancelText="Close"
-              width={450}
-              >
-               <iframe src="https://drive.google.com/file/d/1aqZVqSjJAhdb7WMTZKnOezkgwpmtNs0K/preview" width="400" height="400" allow="autoplay"></iframe>
-             </Modal>
+                  <Modal
+                    title="My RESUME"
+                    open={open}
+                    onOk={hideModal}
+                    onCancel={hideModal}
+                    centered={true}
+                    cancelText="Close"
+                    width={500}
+                    footer={[
+                      <Button key="close" onClick={hideModal}>
+                        Close
+                      </Button>,
+                      <Button key="download" href={resume} download="VENKATA PHANI CHARAN REDDY UDUMULA.pdf" type="primary">
+                        Download
+                      </Button>,
+                    ]}
+                  >
+                    <iframe src="https://drive.google.com/file/d/1aqZVqSjJAhdb7WMTZKnOezkgwpmtNs0K/preview" width="450" height="450" allow="autoplay"></iframe>
+                  </Modal>
                   <a href="#contact" className="btn custom-btn custom-btn-bg custom-btn-link">
-                    Get a free quote
+                    Connect with Me
                   </a>
                 </div>
               </div>

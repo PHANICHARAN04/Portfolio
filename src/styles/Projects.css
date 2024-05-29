@@ -1,0 +1,109 @@
+.side-heading {
+    font-size: 2.0em;
+    font-weight: bold;
+    color: #ffc200;
+    margin-bottom: 10px;
+    border-left: 5px solid greenyellow; /* Add a green left border */
+    padding-left: 10px; /* Add padding to create space between the border and text */
+    text-align: left;
+}
+.side-heading2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 15px; /* Add padding to create space between the border and text */
+    text-align: left;
+}
+.projects-section {
+    text-align: center;
+    padding: 120px;
+    background-color: none;
+    color: #ffc800;
+}
+.scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.projects-wrapper {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 80%; /* Adjust this width as necessary */
+    scrollbar-width: none; /* For Firefox */
+}
+.projects-wrapper::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+.project-item {
+    min-width: 300px;
+    margin: 0 10px;
+    padding: 20px;
+    background: none;
+    border-radius: 10px;
+    color: #fff;
+    text-align: left;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6;
+    cursor: pointer;
+}
+.project-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.project-item h3 {
+    margin: 10px 0;
+}
+.project-item.active {
+    transform: scale(1.1);
+    opacity: 1;
+}
+.project-item:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+.github-button {
+    background-color: #ffc800;
+    color: white; /* Ensure text color is always white */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; /* Adjusted padding for more space around text */
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0 10px; /* Adjusted margin between buttons */
+}
+.github-button:hover {
+    background-color: #ffb700;
+    transform: scale(1.1);
+    color: white; /* Ensure the text remains visible */
+}
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffc800;
+    border: none;
+    color: #20232a; /* Ensure initial text color */
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.scroll-button.left {
+    left: 0;
+}
+.scroll-button.right {
+    right: 0;
+}
+.scroll-button:hover {
+    background: #ffb700;
+    transform: scale(1.1);
+    color: #20232a; /* Ensure the text remains visible */
+}

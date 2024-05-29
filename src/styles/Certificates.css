@@ -3,11 +3,11 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
+  padding: 120px;
 }
 
 .certificate {
-  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  background: none;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -25,16 +25,15 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.certificate-image {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
+.badge-container {
+  position: absolute;
+  top: 48px; /* Adjusted to move the badge down */
+  right: 15px;
 }
 
-.certificate:hover .certificate-image {
-  transform: rotate(2deg);
+.badge-image {
+  width: 87px; /* Increased size */
+  height: 87px; /* Increased size */
 }
 
 .certificate-title {
@@ -97,4 +96,3 @@
   0% { opacity: 0; transform: rotate(-10deg); }
   100% { opacity: 1; transform: rotate(0deg); }
 }
-

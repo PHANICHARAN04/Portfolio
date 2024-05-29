@@ -67,7 +67,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#project" className="nav-link">
+                <a href="#projects" className="nav-link">
                   <span data-hover="Projects">Projects</span>
                 </a>
               </li>

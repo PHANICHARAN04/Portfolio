@@ -4,6 +4,7 @@ import Certificates from './Components/Certificates';
 import { Contact } from './Components/Contact';
 import Navbar from './Components/Navbar';
 import Skills from './Components/Skills';
+import Projects from './Components/Project';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <Navbar/>
     <About/>
     <Skills></Skills>
+    <Projects></Projects>
     <Certificates></Certificates>
     <Contact/>
     </>
