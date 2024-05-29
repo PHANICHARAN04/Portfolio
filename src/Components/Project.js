@@ -82,6 +82,10 @@ const Projects = () => {
       observer.observe(item);
     });
 
+    // Initial check to ensure the correct element is highlighted on load
+    const initialIndex = 0;
+    scrollToIndex(initialIndex);
+
     return () => {
       Array.from(projectItems).forEach(item => {
         observer.unobserve(item);
