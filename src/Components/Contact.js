@@ -2,7 +2,11 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Contact.css';
+import '../styles/tooplate-style.css';
 
 export const Contact = () => {
   const form = useRef();
@@ -24,6 +28,26 @@ export const Contact = () => {
 
   return (
     <div id="contact" className="contact-container">
+      <div className="contact-icons">
+        <a href="mailto:phanicharan116@gmail.com">
+          <FontAwesomeIcon icon={faEnvelope} />
+        </a>
+        <a href="https://www.linkedin.com/in/phanicharan04" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faLinkedin} />
+        </a>
+        <a href="https://github.com/PHANICHARAN04" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
+        <a href="https://x.com/PHANICHARAN04" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faTwitter} />
+        </a>
+        <a href="https://instagram.com/phanicharan.uv" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faInstagram} />
+        </a>
+        <a href="https://www.facebook.com/phanicharan.udumula" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faFacebook} />
+        </a>
+      </div>
       <form ref={form} onSubmit={sendEmail} className="contact-form">
         <h2>Contact Me ✉️</h2>
         <label>Name</label>

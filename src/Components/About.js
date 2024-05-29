@@ -1,13 +1,22 @@
 // About.js
 
 import React from 'react';
+import { useState } from 'react';
+import {Modal} from 'antd';
 import '../styles/unicons.css';
 import '../styles/tooplate-style.css';
 import '../files/myresume.pdf';
 import dp from '../images/dark.png';
-import '../styles/About.css'; // Add this line to import the CSS file
+import '../styles/About.css';
 
 function About() {
+  const [open, setOpen] = useState(false);
+  const showModal = () => {
+    setOpen(true);
+  };
+  const hideModal = () => {
+    setOpen(false);
+  };
   return (
     <div>
       <section className="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
@@ -32,9 +41,20 @@ function About() {
                 I can oversee everything from initial conception to deployment and ongoing management.
                 </p>
                 <div className="custom-btn-group mt-4">
-                  <a href="./files/myresume.pdf" className="btn mr-lg-2 custom-btn">
+                  <a onClick={showModal} className="btn mr-lg-2 custom-btn">
                     <i className="uil uil-file-alt"></i> Open Resume
                   </a>
+              <Modal
+              title="Modal"
+              open={open}
+              onOk={hideModal}
+              onCancel={hideModal}
+             centered={true}
+              cancelText="Close"
+              width={450}
+              >
+               <iframe src="https://drive.google.com/file/d/1aqZVqSjJAhdb7WMTZKnOezkgwpmtNs0K/preview" width="400" height="400" allow="autoplay"></iframe>
+             </Modal>
                   <a href="#contact" className="btn custom-btn custom-btn-bg custom-btn-link">
                     Get a free quote
                   </a>
