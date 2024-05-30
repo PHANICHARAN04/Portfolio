@@ -40,12 +40,12 @@ const projectsData = [
   // Add more projects as needed
 ];
 
-const projectsWithButtons = [1, 2, 3]; // IDs of projects with GitHub buttons
+const projectsWithButtons = [1, 2, 3, 4]; // IDs of projects with GitHub buttons
 
 const Projects = () => {
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-
+console.log(activeIndex)
   const scrollToIndex = (index) => {
     if (scrollRef.current) {
       const projectItems = scrollRef.current.children;
@@ -94,14 +94,17 @@ const Projects = () => {
   }, []);
 
   const scrollLeft = () => {
-    const newIndex = (activeIndex - 1 + projectsData.length) % projectsData.length;
+    const newIndex = activeIndex > 0 ? activeIndex - 1  : projectsData.length-1;
+    console.log(newIndex);
     scrollToIndex(newIndex);
   };
 
   const scrollRight = () => {
-    const newIndex = (activeIndex + 1) % projectsData.length;
+    const newIndex = activeIndex < projectsData.length -1  ? activeIndex + 1 : 0;
+    console.log(newIndex);
     scrollToIndex(newIndex);
-  };
+};
+
 
   return (
     <div className="projects-section" id='projects'>
@@ -109,13 +112,13 @@ const Projects = () => {
       <h2 className="side-heading2">that I worked</h2>
       <div className="scroll-container">
         <button className="scroll-button left" onClick={scrollLeft}>‹</button>
-        <div className="projects-wrapper" ref={scrollRef}>
+        <div className="projects-wrapper">
           {projectsData.map((project, index) => (
             <div 
               key={project.id} 
               className={`project-item ${activeIndex === index ? 'active' : ''}`} 
               data-index={index}
-              onClick={() => scrollToIndex(index)}
+              onClick={() => scrollToIndex(index)}  ref={scrollRef}
             >
               <img src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
