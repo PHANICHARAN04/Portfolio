@@ -1,13 +1,15 @@
 /* Navbar.css */
-
 .navbar-scrolling {
-    background: rgba(255, 255, 255, 0.8); /* Translucent background */
-    backdrop-filter: blur(10px);
-    transition: background 0.3s ease, backdrop-filter 0.3s ease;
-  }
-  
-  .navbar-scrolling .navbar-brand,
-  .navbar-scrolling .nav-link {
-    color: #333; /* Adjust text color as needed */
-  }
-  
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar-scrolling-light {
+  background: rgba(255, 255, 255, 0.8); /* Light mode background */
+  color: #333; /* Adjust text color as needed */
+}
+
+.navbar-scrolling-dark {
+  background: rgba(31, 31, 31, 0.8); /* Dark mode background */
+  color: #ccc; /* Adjust text color as needed */
+}

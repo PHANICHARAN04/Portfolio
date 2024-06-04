@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar navbar-expand-sm navbar-light ${scrolling ? 'navbar-scrolling' : ''}`}>
+      <nav className={`navbar navbar-expand-sm navbar-light ${scrolling ? (darkMode ? 'navbar-scrolling navbar-scrolling-dark' : 'navbar-scrolling navbar-scrolling-light') : ''}`}>
         <div className="container">
           <a className="navbar-brand" href="/">
             <i className="uil uil-user icon-large"></i> U V Phani Charan
