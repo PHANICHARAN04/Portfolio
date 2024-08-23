@@ -37,15 +37,13 @@ const projectsData = [
     image: qa,
     technologies: ['HTML', 'CSS', 'JavaScript']
   }
-  // Add more projects as needed
 ];
-
-const projectsWithButtons = [1, 2, 3, 4]; // IDs of projects with GitHub buttons
 
 const Projects = () => {
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-console.log(activeIndex)
+  const observerRef = useRef(null);
+
   const scrollToIndex = (index) => {
     if (scrollRef.current) {
       const projectItems = scrollRef.current.children;
@@ -53,7 +51,7 @@ console.log(activeIndex)
       const containerWidth = scrollRef.current.offsetWidth;
       const selectedElementWidth = selectedElement.offsetWidth;
       const offset = selectedElement.offsetLeft - (containerWidth / 2) + (selectedElementWidth / 2);
-      
+
       scrollRef.current.scrollTo({
         left: offset,
         behavior: 'smooth'
@@ -67,44 +65,44 @@ console.log(activeIndex)
       root: scrollRef.current,
       threshold: 0.5,
     };
-    
-    const observer = new IntersectionObserver((entries) => {
+
+    const handleIntersection = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const index = parseInt(entry.target.getAttribute('data-index'), 10);
           setActiveIndex(index);
         }
       });
-    }, options);
+    };
+
+    observerRef.current = new IntersectionObserver(handleIntersection, options);
 
     const projectItems = scrollRef.current.children;
     Array.from(projectItems).forEach(item => {
-      observer.observe(item);
+      observerRef.current.observe(item);
     });
 
-    // Initial check to ensure the correct element is highlighted on load
-    const initialIndex = 0;
-    scrollToIndex(initialIndex);
+    // Set initial active index to 0 and scroll to it
+    scrollToIndex(0);
 
     return () => {
-      Array.from(projectItems).forEach(item => {
-        observer.unobserve(item);
-      });
+      if (observerRef.current) {
+        Array.from(projectItems).forEach(item => {
+          observerRef.current.unobserve(item);
+        });
+      }
     };
   }, []);
 
   const scrollLeft = () => {
-    const newIndex = activeIndex > 0 ? activeIndex - 1  : projectsData.length-1;
-    console.log(newIndex);
+    const newIndex = (activeIndex - 1 + projectsData.length) % projectsData.length;
     scrollToIndex(newIndex);
   };
 
   const scrollRight = () => {
-    const newIndex = activeIndex < projectsData.length -1  ? activeIndex + 1 : 0;
-    console.log(newIndex);
+    const newIndex = (activeIndex + 1) % projectsData.length;
     scrollToIndex(newIndex);
-};
-
+  };
 
   return (
     <div className="projects-section" id='projects'>
@@ -112,20 +110,20 @@ console.log(activeIndex)
       <h2 className="side-heading2">that I worked</h2>
       <div className="scroll-container">
         <button className="scroll-button left" onClick={scrollLeft}>‹</button>
-        <div className="projects-wrapper">
+        <div className="projects-wrapper" ref={scrollRef}>
           {projectsData.map((project, index) => (
             <div 
               key={project.id} 
               className={`project-item ${activeIndex === index ? 'active' : ''}`} 
               data-index={index}
-              onClick={() => scrollToIndex(index)}  ref={scrollRef}
+              onClick={() => scrollToIndex(index)}
             >
               <img src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <p><strong>Technologies used:</strong> {project.technologies.join(', ')}</p>
-              {projectsWithButtons.includes(project.id) && (
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="github-button">View in GitHub</a>
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="github-button">View on GitHub</a>
               )}
             </div>
           ))}

@@ -6,7 +6,7 @@ import { Modal, Button } from 'antd';
 import '../styles/unicons.css';
 import '../styles/tooplate-style.css';
 import resume from '../files/VENKATA PHANI CHARAN REDDY UDUMULA.pdf';
-import dp from '../images/dark.png';
+import dp from '../images/demo.png';
 import '../styles/About.css';
 
 function About() {
@@ -30,7 +30,7 @@ function About() {
                   <span className="mr-2">I am U V Phani Charan</span>
                   <br />
                   <div className="animated-info">
-                    <span className="animated-item">Passionate About Web Development</span>
+                    <span className="animated-item">Full-Stack Developer</span>
                     <span className="animated-item">Data Visualization Enthusiast</span>
                     <span className="animated-item">Cloud Computing Aspirant</span>
                   </div>
@@ -71,7 +71,7 @@ function About() {
             </div>
             <div className="col-lg-5 col-md-12 col-12 d-flex justify-content-center align-items-center">
               <div className="highlighted-image">
-                <img src={dp} alt='' />
+                <img src={dp} alt='Profile' />
               </div>
             </div>
           </div>
