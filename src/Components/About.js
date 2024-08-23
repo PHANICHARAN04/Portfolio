@@ -32,7 +32,7 @@ function About() {
                   <div className="animated-info">
                     <span className="animated-item">Full-Stack Developer</span>
                     <span className="animated-item">Data Visualization Enthusiast</span>
-                    <span className="animated-item">Cloud Computing Aspirant</span>
+                    <span className="animated-item">Cloud Computing Explorer</span>
                   </div>
                   <br />
                 </h1>
