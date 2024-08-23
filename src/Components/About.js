@@ -6,7 +6,7 @@ import { Modal, Button } from 'antd';
 import '../styles/unicons.css';
 import '../styles/tooplate-style.css';
 import resume from '../files/VENKATA PHANI CHARAN REDDY UDUMULA.pdf';
-import dp from '../images/demo.png';
+import dp from '../images/dp.png';
 import '../styles/About.css';
 
 function About() {
