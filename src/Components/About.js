@@ -61,7 +61,7 @@ function About() {
                       </Button>,
                     ]}
                   >
-                    <iframe src="https://drive.google.com/file/d/1aqZVqSjJAhdb7WMTZKnOezkgwpmtNs0K/preview" width="450" height="450" allow="autoplay"></iframe>
+                    <iframe src="https://drive.google.com/file/d/17dwsxIp4fptxnEb2Ae54fa7WtuLq5EL8/preview" width="450" height="450" allow="autoplay"></iframe>
                   </Modal>
                   <a href="#contact" className="btn custom-btn custom-btn-bg custom-btn-link">
                     Connect with Me
