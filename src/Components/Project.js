@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import '../styles/Projects.css';
 import ofos from '../images/project/ofos.png';
+import osma from '../images/project/osma.png';
 import hws from '../images/project/hws.png';
 import exp from '../images/project/exp.png';
 import qa from '../images/project/qa.png';
@@ -16,6 +17,14 @@ const projectsData = [
   },
   {
     id: 2,
+    title: 'Online Social Media Application',
+    description: 'Developed an idea-sharing platform that allows users to share innovative ideas, connect with like-minded individuals, and collaborate in a technology-driven environment',
+    image: osma,
+    github: 'https://github.com/PHANICHARAN04/HordeTalk',
+    technologies: ['React JS', 'Express JS', 'MongoDB', 'Node JS', 'JWT']
+  },
+  {
+    id: 3,
     title: 'HealthCare & Well Being System',
     description: 'Developed a comprehensive healthcare system with 3 modules to ensure accommodating doctors and tests',
     image: hws,
@@ -23,7 +32,7 @@ const projectsData = [
     technologies: ['Django', 'HTML', 'CSS', 'MongoDB']
   },
   {
-    id: 3,
+    id: 4,
     title: 'Expense Tracker',
     description: 'Developed a budget & expense-tracking platform aimed at effectively managing finances with graphical representation and threshold alerts',
     image: exp,
@@ -31,7 +40,7 @@ const projectsData = [
     technologies: ['React', 'JavaScript', 'CSS']
   },
   {
-    id: 4,
+    id: 5,
     title: 'Quiz App',
     description: 'Developed a Quiz application tailored for cricket enthusiasts, featuring a timer and scoring system.',
     image: qa,
