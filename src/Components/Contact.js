@@ -8,6 +8,10 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Contact.css';
 import '../styles/tooplate-style.css';
 
+const service = process.env.REACT_APP_SERVICE
+const template = process.env.REACT_APP_TEMPLATE
+const password = process.env.REACT_APP_PASSWORD
+
 export const Contact = () => {
   const form = useRef();
 
@@ -15,7 +19,7 @@ export const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_iazne3q', 'template_72nzh17', form.current, '2MU675HFAYpSY-0CV')
+      .sendForm(service, template, form.current, password)
       .then(
         () => {
           toast.success('Message sent successfully!');
