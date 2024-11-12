@@ -10,7 +10,7 @@ import '../styles/tooplate-style.css';
 
 const service = process.env.REACT_APP_SERVICE
 const template = process.env.REACT_APP_TEMPLATE
-const password = process.env.REACT_APP_PASSWORD
+const publickey = process.env.REACT_APP_PUBLIC_KEY
 
 export const Contact = () => {
   const form = useRef();
@@ -19,7 +19,7 @@ export const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(service, template, form.current, password)
+      .sendForm(service, template, form.current, publickey)
       .then(
         () => {
           toast.success('Message sent successfully!');
